@@ -106,39 +106,6 @@ OmniScale-Optimizer/
 
 ---
 
-## 🛠️ Installation
-
-### Prerequisites
-- Python 3.8+
-- PyTorch 2.0+
-- NumPy, Pandas
-- pybind11
-- g++ with OpenMP support
-
-### Setup
-
-```
-bash
-# Clone the repository
-git clone https://github.com/MYasvanth/OmniScale-Optimizer.git
-cd OmniScale-Optimizer
-
-# Install Python dependencies
-pip install torch numpy pandas pybind11 scikit-learn
-
-# Compile the C++ HPC core
-cd src/optimizer/cpp_core
-g++ -O3 -fopenmp -Wall -shared -std=c++11 -fPIC \
-    $(python3 -m pybind11 --includes) \
-    optimizer.cpp \
-    -o fast_optimizer$(python3-config --extension-suffix)
-
-# Return to project root
-cd ../../../../..
-```
-
----
-
 ## 📊 Usage
 
 ### Phase 1: Data Parsing
@@ -224,18 +191,6 @@ assignments, usage = run_distributed_optimizer(
 ## 📝 License
 
 MIT License — See [LICENSE](LICENSE) for details.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📧 Contact
-
-For questions or feedback, please open an issue on GitHub.
 
 ---
 
